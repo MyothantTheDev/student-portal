@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* ------ Variables ------ */
+
+:root{
+    /* text colors */
+    --text-gray: #808291;
+    --text-white: #f8f9fa;
+    --text-light: #f6f6f6;
+    --text-dark: #1A3260;
+    --text-dark2: #1A3760D4;
+    --text-red: #ff4d6d;
+    --box-shadow: 0px 0px 50px 0px rgb(0 0 0 /10%);
+    --bg-blue: rgb(171, 248, 238);
+    --bg-red: rgb(249, 162, 178);
+    --bg-yellow: rgb(253, 254, 207);
+    --bg-purple: rgb(229, 210, 244);
+
+    /* font familiy */
+    --font-poppins: "Poppins",'sans-serif';
+
+    /* gradient colors */
+    --bg-gradient: linear-gradient(to right, #168ff1, #2372f1);
+    --bg-gradient-indigo: linear-gradient(to right, #aa7ad4, #723cdd);
+    --bg-gradient-peach: linear-gradient(to right, #fff7f3, #fff7f3);
+}
+
+a{
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ------ /Variables ------ */
+
+/* ------ Global classes ------ */
+
+.text-dark{
+    color: var(--text-dark);
+}
+
+.text-white{
+    color: var(--text-white);
+}
+
+.text-light{
+    color: var(--text-light);
+}
+
+.text-gray{
+    color: var(--text-gray);
+}
+
+.text-red{
+    color: var(--text-red);
+}
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+.bg-gradient{
+    background: var(--bg-gradient);
+}
+
+.bg-gradient-indigo{
+    background: var(--bg-gradient-indigo);
+}
+
+.bg-gradient-peach{
+    background: var(--bg-gradient-peach);
+}
+
+.bg-gradient-red{
+    background: var(--bg-red);
+}
+
+.bg-gradient-blue{
+    background: var(--bg-gradient);
+}
+
+.bg-gradient-yellow{
+    background: var(--bg-yellow);
+}
+
+.bg-gradient-purple{
+    background: var(--bg-purple);
+}
+
+.btn-custom{
+    border: none;
+    padding: 1vw 3vw;
+    border-radius: 50px;
+    font-family: var(--font-poppins);
+    font-weight: bold;
+}
+
+.btn-custom:hover{
+    background: var(--bg-gradient-indigo);
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.font-poppins{
+    font-family: var(--font-poppins);
+}
+.text-sm{
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.text-md{
+    font-size: 2vw;
+}
+
+.text-lg{
+    font-size: 2.2em;
+    line-height: 3rem;
+}
+
+.text-xl{
+    font-size: 3em;
+}
+
+.text-2xl{
+    font-size: 5em;
+}
+
+.loaction-right{
+    margin-left: 1rem;
+}
+.opacity{
+    opacity: 90%;
+}
+
+/* ------ /Global classes ------ */
+
+/* ------ Topbar area Style ------ */
+.topbar-area{
+    background: var(--bg-gradient-peach);
+}
+
+.card-area{
+    width: 100%;
+    text-align: center;
+    background: var(--text-light);
+    border-radius: 1em;
+    
+}
+
+.card-size{
+    width: 25vw; height: 30rem;
+}
+
+.overflow-y{
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: gray rgb(231, 230, 230);
+}
+
+/* .overflow-y::-webkit-scrollbar{
+    display: none;
+}
+
+.overflow-y{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+} */
+/* ------ /Topbar area Style ------ */
+
+@media (min-width: 768px){
+    .text-md{
+        font-size: 1rem !important;
+    }
+    
+    
+}
