@@ -1,0 +1,45 @@
+{% load static %}
+<header class="header" id="header">
+    <div class="header_toggle"> <i class='bi bi-list' id="header-toggle"></i> </div>
+    <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
+</header>
+<div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+        <div> 
+            <a href="#" class="nav_logo"> 
+                <img src="{% static '/images/elw-icon.jpg' %}" class='nav_logo-icon'></i> 
+                <span class="nav_logo-name">ELW</span> 
+            </a>
+            <div class="nav_list"> 
+                <a href="{% url 'dashboard' %}" class="nav_link active"> 
+                    <i class='bi bi-speedometer nav_icon'></i> 
+                    <span class="nav_name">Dashboard</span> 
+                </a> 
+                <a href="{% url 'user-profile' user %}" class="nav_link">
+                    <i class='bi bi-person-circle nav_icon'></i> 
+                    <span class="nav_name">{{ user.username }}</span> 
+                </a> 
+                <a href="#" class="nav_link"> 
+                    <i class='bi bi-envelope nav_icon'></i> 
+                    <span class="nav_name">Messages</span> 
+                </a> 
+                <a href="{% url 'classes' user.username %}" class="nav_link"> 
+                    <i class='bi bi-easel nav_icon'></i> 
+                    <span class="nav_name">classes</span> 
+                </a> 
+                <a href="#" class="nav_link"> 
+                    <i class="bi bi-journal-text nav_icon"></i>
+                    <span class="nav_name">Files</span> 
+                </a> 
+                <a href="{% url 'resultboard' user.username %}" class="nav_link"> 
+                    <i class='bi bi-bar-chart-fill nav_icon'></i> 
+                    <span class="nav_name">Stats</span> 
+                </a> 
+            </div>
+        </div> 
+        <a href="{% url 'logout' %}" class="nav_link"> 
+            <i class='bi bi-box-arrow-left nav_icon'></i> 
+            <span class="nav_name">SignOut</span> 
+        </a>
+    </nav>
+</div>

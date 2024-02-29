@@ -1,0 +1,29 @@
+{% load static %}
+<nav class="navbar navbar-expand-md bg-gradient-peach sticky-top opacity">
+    <div class="container-fluid">
+        <a href="" class="navbar-brand">
+            <img src="{% static '/images/elw-logo.jpg' %}" alt="ELW" class="rounded-5">
+        </a>
+        <button class="navbar-toggler btn-custom" data-bs-toggle="collapse" data-bs-target="#elwnav">
+            <i class="bi bi-filter-left"></i>
+        </button>
+        <div class="collapse navbar-collapse font-poppins" id="elwnav">
+            <div class="navbar-nav me-auto">
+                <a href="{% url 'home' %}" class="nav nav-link text-red">Home</a>
+                <a href="" class="nav nav-link text-red">About</a>
+                {% if user.is_authenticated %}
+                {% else %}
+                <a href="{% url 'quizes:quiz-main' %}" class="nav nav-link text-red">Placement Test</a>
+                {% endif %}
+            </div>
+            <div class="navbar-nav">
+                {% if user.is_authenticated %}
+                <a href="{% url 'dashboard' %}" class="nav nav-link text-red">Dashboard</a>
+                <a href="{% url 'logout' %}" class="nav nav-link text-red">Logout</a>
+                {% else %}
+                <a href="" class="nav nav-link text-red">LogIn</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,23 @@
+{% extends "learn/user_base.html" %}
+{% block content %}
+    <table class="table">
+        <thead class="table-info">
+            <th scope="col">Class</th>
+            <th scope="col">Listening</th>
+            <th scope="col">Reading</th>
+            <th scope="col">Writing</th>
+            <th scope="col">Speaking</th>
+            <th scope="col">Date</th>
+        </thead>
+        {% for result in results %}
+            <tbody>
+                <th scope="row">{{result.section}}</th>
+                <td>{{ result.listening }}</td>
+                <td>{{ result.reading }}</td>
+                <td>{{ result.writing }}</td>
+                <td>{{ result.speaking }}</td>
+                <td>{{ result.date }}</td>
+            </tbody>
+        {% endfor %}
+    </table>
+{% endblock content %}

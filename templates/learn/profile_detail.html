@@ -1,0 +1,47 @@
+{% extends "learn/user_base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content-section font-poppins">
+    <div class="d-flex align-items-center content-section">
+        <div class="flex-shrink-0">
+            <img src="{{ profile.image.url }}" alt="{{ user.username }}'s profile" class="account-img rounded-5">
+        </div>
+        <div class="flex-grow-1 ms-3">
+            <div class="article-metadata">
+                <h2 class="nav-item me-2">{{ user.username }}</h2>
+            </div>
+            <p class="article-content">{{ user.email }}</p>
+        </div>
+   </div>
+    <form action="{% url 'user-profile' user.username %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="mb-3">
+            <legend class="border-bottom mb-4">Profile Info</legend>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control w-25" value="{{ user.username }}">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control w-25" value="{{ user.email }}">
+            </div>
+            <div class="mb-3">
+                <label for="section" class="form-label">Classes</label>
+                <ul class="list-group w-25">
+                    {% for section in sections %}
+                        <li class="list-group-item disabled">{{ section }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" name="image" class="form-control w-50" accept="image/*">
+            </div>
+        </fieldset>
+        <div class="mb-3">
+            <button class="btn btn-custom" type="submit">Update</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

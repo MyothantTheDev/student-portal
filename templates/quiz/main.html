@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h1>Quiz List</h1>
+    <hr>
+    {% for quiz in quizes %}
+        <button class="btn btn-link modal-button" data-bs-toggle="modal"
+            data-bs-target="#quizstarter"
+            data-pk="{{quiz.pk}}"
+            data-quiz="{{quiz.name}}"
+            data-questions="{{quiz.number_of_questions}}"
+            data-difficulty="{{quiz.difficulty}}"
+            data-time="{{quiz.time}}"
+            data-pass="{{quiz.required_score_to_pass}}">{{quiz.name}}
+        </button><br>
+    {% endfor %}
+        <div class="modal fade" id="quizstarter" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title">Start ?</h4>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body" id="modal-body-confirm"></div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                        <button type="button" id="start-button" class="btn btn-primary">Yes</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+{% endblock content %}
+
+{% block script %}
+    <script src="{% static '/js/main.js' %}"></script>
+{% endblock script %}
+    

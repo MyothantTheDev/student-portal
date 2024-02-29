@@ -1,0 +1,31 @@
+{% extends "learn/user_base.html" %}
+{% load static %}
+
+{% block content %}
+    <h3>NoticeBoard</h3>
+    <hr>
+    {% for section in profile.section.all %}
+        <button type="button" class="btn btn-info dropdown-toggle me-5"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            {{section.section}}
+        </button>
+    {% endfor %}
+    {% for notice in notices %}
+    <ul class="dropdown-menu">
+        {% for n in notice %}
+            <li>
+                <button type="button" class="dropdown-item noti"
+                    data-subject="{{n.subject}}"
+                    data-message="{{n.message}}">
+                    {{n.subject}}
+                </button>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
+    <div id="msg-body"></div>
+{% endblock content %}
+
+{% block script %}
+    <script src="{% static '/js/notice.js' %}"></script>
+{% endblock script %}

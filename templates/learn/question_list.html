@@ -1,0 +1,17 @@
+{% extends "learn/user_base.html" %}
+{% block content %}
+    <h1>Question List</h1>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <div class="mb-3 bg-light">
+                <h5>{{question}}</h5>
+                <textarea name="{{question}}" id="" rows="5" 
+                    class="mb-3 form-control w-25" style="resize: none;
+                    overflow-y: scroll;" placeholder="Answer here"></textarea>
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-custom mb-5">Submit</button>
+    </form>
+{% endblock content %}
